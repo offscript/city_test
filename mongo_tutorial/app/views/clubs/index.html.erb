@@ -1,0 +1,4 @@
+<% @clubs.each do |club| %>
+	<h1><%= club[:club_name]%> <%=club.season %></h1>
+	<p><%= club[:stats]['goals']%>
+<% end %>
