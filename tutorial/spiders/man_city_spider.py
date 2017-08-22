@@ -17,6 +17,8 @@ id_number = 11
 club_data = {
 	'club_name': club,
 	'club_id': id_number,
+	'primary_color': '#6caee0',
+	'secondary_color': '#fff'
 }
 
 class ManCitySpider(scrapy.Spider):

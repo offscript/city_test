@@ -1,4 +1,150 @@
 <%= content_tag :div, class: "clubs_class", data: {club: @club} do %>
 <% end %>
-<h1><%= @club.club_name%> <%= @club['2014/15'] %></h1>
-<%= render "finish_graph" %>
+<% content_for :css_head do %>
+	<style>
+		li.tab a {color: <%= @club.primary_color %>;}
+	</style>
+<% end %>
+
+<div class="section1">
+	<ul class="tabs">
+	    <li class="tab col s2 grandparent"><a href="#test1" style="color: <%= @club.primary_color %>">2012/13</a></li>
+	    <li class="tab col s2 grandparent"><a href="#test2" style="color: <%= @club.primary_color %>">2013/14</a></li>
+	    <li class="tab col s2 grandparent"><a href="#test3" style="color: <%= @club.primary_color %>">2014/15</a></li>
+	    <li class="tab col s2 grandparent"><a href="#test4" style="color: <%= @club.primary_color %>">2015/16</a></li>
+	    <li class="tab col s2 grandparent"><a href="#test5" style="color: <%= @club.primary_color %>">2016/17</a></li>
+	    <li class="tab col s2 disabled grandparent"><a href="#test6" style="color: <%= @club.primary_color %>">2017/18</a></li>
+	  </ul>
+	<div id="test1">
+	  	<ul class="tabs">
+	        <li class="tab col s3"><a href="#Attack" style="color: <%= @club.primary_color %>">Attack</a></li>
+	        <li class="tab col s3"><a href="#Defense" style="color: <%= @club.primary_color %>">Team Play</a></li>
+	        <li class="tab col s3"><a href="#Team_Play" style="color: <%= @club.primary_color %>">Defense</a></li>
+	        <li class="tab col s3"><a href="#Discipline" style="color: <%= @club.primary_color %>">Disicipline</a></li>
+	    </ul>
+	</div>
+	<div id="test2">
+	  	<ul class="tabs">
+	        <li class="tab col s3"><a href="#Attack2" style="color: <%= @club.primary_color %>">Attack</a></li>
+	        <li class="tab col s3"><a href="#Defense" style="color: <%= @club.primary_color %>">Team Play</a></li>
+	        <li class="tab col s3"><a href="#Team_Play" style="color: <%= @club.primary_color %>">Defense</a></li>
+	        <li class="tab col s3"><a href="#Discipline" style="color: <%= @club.primary_color %>">Disicipline</a></li>
+	    </ul>
+	</div>
+	<div id="test3">
+	  	<ul class="tabs">
+	        <li class="tab col s3"><a href="#Attack3" style="color: <%= @club.primary_color %>">Attack</a></li>
+	        <li class="tab col s3"><a href="#Defense" style="color: <%= @club.primary_color %>">Team Play</a></li>
+	        <li class="tab col s3"><a href="#Team_Play" style="color: <%= @club.primary_color %>">Defense</a></li>
+	        <li class="tab col s3"><a href="#Discipline" style="color: <%= @club.primary_color %>">Disicipline</a></li>
+	    </ul>
+	</div>
+	<div id="test4">
+	  	<ul class="tabs">
+	        <li class="tab col s3"><a href="#Attack4" style="color: <%= @club.primary_color %>">Attack</a></li>
+	        <li class="tab col s3"><a href="#Defense" style="color: <%= @club.primary_color %>">Team Play</a></li>
+	        <li class="tab col s3"><a href="#Team_Play" style="color: <%= @club.primary_color %>">Defense</a></li>
+	        <li class="tab col s3"><a href="#Discipline" style="color: <%= @club.primary_color %>">Disicipline</a></li>
+	    </ul>
+	</div>
+	<div id="test5">
+	  	<ul class="tabs">
+	        <li class="tab col s3"><a href="#Attack5" style="color: <%= @club.primary_color %>">Attack</a></li>
+	        <li class="tab col s3"><a href="#Defense" style="color: <%= @club.primary_color %>">Team Play</a></li>
+	        <li class="tab col s3"><a href="#Team_Play" style="color: <%= @club.primary_color %>">Defense</a></li>
+	        <li class="tab col s3"><a href="#Discipline" style="color: <%= @club.primary_color %>">Disicipline</a></li>
+	    </ul>
+	</div>
+	<div id="Attack" class="grandchild">
+		<ul class="collection">
+	        <li class="collection-item"><div>Goals<span class="secondary-content"><%= @club['2012/13']['goals']%></span></div></li>
+	        <li class="collection-item"><div>Goals Per Match<span class="secondary-content"><%= @club['2012/13']['goals_per_match']%></span></div></li>
+	        <li class="collection-item"><div>Penalties Scored<span class="secondary-content"><%= @club['2012/13']['penalties_scored']%></span></div></li>
+	        <li class="collection-item"><div>Hit Woodwork<span class="secondary-content"><%= @club['2012/13']['hit_woodwork']%></span></div></li>
+	        <li class="collection-item"><div>Shots<span class="secondary-content"><%= @club['2012/13']['shots']%></span></div></li>
+	        <li class="collection-item"><div>Shots On Target<span class="secondary-content"><%= @club['2012/13']['shots_on_target']%></span></div></li>
+	        <li class="collection-item"><div>Shot Accuracy<span class="secondary-content"><%= @club['2012/13']['shot_accuracy']%></span></div></li>
+	        <li class="collection-item"><div>Big Chances Created<span class="secondary-content"><%= @club['2012/13']['big_chances_created']%></span></div></li>
+	    </ul>
+	</div>
+	<div id="Attack2" class="grandchild">
+		<ul class="collection">
+	        <li class="collection-item"><div>Goals<span class="secondary-content"><%= @club['2013/14']['goals']%></span></div></li>
+	        <li class="collection-item"><div>Goals Per Match<span class="secondary-content"><%= @club['2013/14']['goals_per_match']%></span></div></li>
+	        <li class="collection-item"><div>Penalties Scored<span class="secondary-content"><%= @club['2013/14']['penalties_scored']%></span></div></li>
+	        <li class="collection-item"><div>Hit Woodwork<span class="secondary-content"><%= @club['2013/14']['hit_woodwork']%></span></div></li>
+	        <li class="collection-item"><div>Shots<span class="secondary-content"><%= @club['2013/14']['shots']%></span></div></li>
+	        <li class="collection-item"><div>Shots On Target<span class="secondary-content"><%= @club['2013/14']['shots_on_target']%></span></div></li>
+	        <li class="collection-item"><div>Shot Accuracy<span class="secondary-content"><%= @club['2013/14']['shot_accuracy']%></span></div></li>
+	        <li class="collection-item"><div>Big Chances Created<span class="secondary-content"><%= @club['2013/14']['big_chances_created']%></span></div></li>
+	    </ul>
+	</div>
+	<div id="Attack3" class="grandchild">
+		<ul class="collection">
+	        <li class="collection-item"><div>Goals<span class="secondary-content"><%= @club['2014/15']['goals']%></span></div></li>
+	        <li class="collection-item"><div>Goals Per Match<span class="secondary-content"><%= @club['2014/15']['goals_per_match']%></span></div></li>
+	        <li class="collection-item"><div>Penalties Scored<span class="secondary-content"><%= @club['2014/15']['penalties_scored']%></span></div></li>
+	        <li class="collection-item"><div>Hit Woodwork<span class="secondary-content"><%= @club['2014/15']['hit_woodwork']%></span></div></li>
+	        <li class="collection-item"><div>Shots<span class="secondary-content"><%= @club['2014/15']['shots']%></span></div></li>
+	        <li class="collection-item"><div>Shots On Target<span class="secondary-content"><%= @club['2014/15']['shots_on_target']%></span></div></li>
+	        <li class="collection-item"><div>Shot Accuracy<span class="secondary-content"><%= @club['2014/15']['shot_accuracy']%></span></div></li>
+	        <li class="collection-item"><div>Big Chances Created<span class="secondary-content"><%= @club['2014/15']['big_chances_created']%></span></div></li>
+	    </ul>
+	</div>
+	<div id="Attack4" class="grandchild">
+		<ul class="collection">
+	        <li class="collection-item"><div>Goals<span class="secondary-content"><%= @club['2015/16']['goals']%></span></div></li>
+	        <li class="collection-item"><div>Goals Per Match<span class="secondary-content"><%= @club['2015/16']['goals_per_match']%></span></div></li>
+	        <li class="collection-item"><div>Penalties Scored<span class="secondary-content"><%= @club['2015/16']['penalties_scored']%></span></div></li>
+	        <li class="collection-item"><div>Hit Woodwork<span class="secondary-content"><%= @club['2015/16']['hit_woodwork']%></span></div></li>
+	        <li class="collection-item"><div>Shots<span class="secondary-content"><%= @club['2015/16']['shots']%></span></div></li>
+	        <li class="collection-item"><div>Shots On Target<span class="secondary-content"><%= @club['2015/16']['shots_on_target']%></span></div></li>
+	        <li class="collection-item"><div>Shot Accuracy<span class="secondary-content"><%= @club['2015/16']['shot_accuracy']%></span></div></li>
+	        <li class="collection-item"><div>Big Chances Created<span class="secondary-content"><%= @club['2015/16']['big_chances_created']%></span></div></li>
+	    </ul>
+	</div>
+	<div id="Attack5" class="grandchild">
+		<ul class="collection">
+	        <li class="collection-item"><div>Goals<span class="secondary-content"><%= @club['2016/17']['goals']%></span></div></li>
+	        <li class="collection-item"><div>Goals Per Match<span class="secondary-content"><%= @club['2016/17']['goals_per_match']%></span></div></li>
+	        <li class="collection-item"><div>Penalties Scored<span class="secondary-content"><%= @club['2016/17']['penalties_scored']%></span></div></li>
+	        <li class="collection-item"><div>Hit Woodwork<span class="secondary-content"><%= @club['2016/17']['hit_woodwork']%></span></div></li>
+	        <li class="collection-item"><div>Shots<span class="secondary-content"><%= @club['2016/17']['shots']%></span></div></li>
+	        <li class="collection-item"><div>Shots On Target<span class="secondary-content"><%= @club['2016/17']['shots_on_target']%></span></div></li>
+	        <li class="collection-item"><div>Shot Accuracy<span class="secondary-content"><%= @club['2016/17']['shot_accuracy']%></span></div></li>
+	        <li class="collection-item"><div>Big Chances Created<span class="secondary-content"><%= @club['2016/17']['big_chances_created']%></span></div></li>
+	    </ul>
+	</div>
+</div>
+<div class="section2">
+	<table class="striped">
+		<caption><h4>Players</h4></caption>
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>Item Name</th>
+              <th>Item Price</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Alvin</td>
+            <td>Eclair</td>
+            <td>$0.87</td>
+          </tr>
+          <tr>
+            <td>Alan</td>
+            <td>Jellybean</td>
+            <td>$3.76</td>
+          </tr>
+          <tr>
+            <td>Jonathan</td>
+            <td>Lollipop</td>
+            <td>$7.00</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+<!--<%= render "finish_graph" %>-->
+

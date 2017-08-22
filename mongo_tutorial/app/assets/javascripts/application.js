@@ -15,4 +15,5 @@
 //= require d3
 //= require rails-ujs
 //= require turbolinks
+//= require clubs
 //= require_tree .

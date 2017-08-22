@@ -1,0 +1,29 @@
+// Place all the styles related to the Clubs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.section1 {
+	border: 1px solid #e0e0e0;
+	margin-top: 10px;
+
+	.tabs {
+
+		.indicator {
+			background-color: black;
+		}	
+	}
+
+	.collection {
+		border: none;
+		.secondary-content {
+			color: black;
+		}
+		
+	}
+}
+
+.section2 {
+	caption {
+		text-align: left;
+	}
+}

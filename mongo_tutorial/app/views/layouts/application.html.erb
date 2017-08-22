@@ -1,14 +1,53 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MongoTutorial</title>
+  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EPL Stat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+    <% if content_for? :css_head %>
+      <%= yield :css_head %>
+    <% end %>
+    <!-- This content tag should allow specific pages to add their own css for primary and secondary colors. --> 
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+  	<header>
+      <nav class="top-nav" style="background: <%= @club.primary_color %>"> <!-- Primary Color -->
+        <div class="container">
+          <div class="nav-wrapper"><a class="page-title" style="color: <%= @club.secondary_color %>"><%= @club.club_name %></a></div> <!-- Page Title ERB Secondary Color-->
+        </div>
+      </nav>
+
+
+		<!--EPL Lion Logo, look to the materialize website for how they do spacing in their 
+		sidenav-->
+
+      <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a></div>
+
+      <ul id="nav-mobile" class="side-nav fixed" style="background: <%= @club.primary_color %>"> <!-- Primary Color -->
+        <img src="https://www.premierleague.com/resources/ver/i/elements/premier-league-logo-header.png">
+        <li class="bold"><a class="waves-effect waves-teal" style="color: <%= @club.secondary_color %>">Home</a></li>
+        <li class="bold"><a class="waves-effect waves-teal" style="color: <%= @club.secondary_color %>">Clubs</a></li>
+        <li class="bold"><a class="waves-effect waves-teal" style="color: <%= @club.secondary_color %>">Players</a></li>
+        <li class="bold"><a class="waves-effect waves-teal" style="color: <%= @club.secondary_color %>">Head to Head</a></li>
+        <!-- li's secondary color -->
+      </ul>
+    </header>
+
+    <main>
+    <div class="container two">
+        <div class="row">
+          <div class="col s12 m9 l12">
+    	<%= yield %>
+       </div>
+      </div>
+     </div>
   </body>
 </html>
